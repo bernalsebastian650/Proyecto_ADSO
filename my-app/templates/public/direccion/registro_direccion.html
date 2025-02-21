@@ -126,13 +126,11 @@
               <label for="departamento_id" class="form-label">
                 Departamento
               </label>
-              <select
-                class="form-select"
-                name="departamento_id"
-                aria-label="Default select example">
-                <option selected>Seleccione</option>
-                <option value="1">Ejemplo 1</option>
-                <option value="2">Ejemplo 2</option>
+              <select class="form-select" name="departamento_id" id="departamento_id">
+                  <option selected>Seleccione</option>
+                  {% for departamento in departamentos %}
+                      <option value="{{ departamento.id }}">{{ departamento.nombre }}</option>
+                  {% endfor %}
               </select>
             </div>
           </div>
@@ -143,26 +141,22 @@
               <label for="users_id" class="form-label">
                 Cliente
               </label>
-              <select
-                class="form-select"
-                name="users_id"
-                aria-label="Default select example">
-                <option selected>Seleccione</option>
-                <option value="1">Ejemplo 1</option>
-                <option value="2">Ejemplo 2</option>
+              <select class="form-select" name="users_id" id="users_id">
+                  <option selected>Seleccione</option>
+                  {% for cliente in users %}
+                      <option value="{{ cliente.id }}">{{ cliente.nombre }}</option>
+                  {% endfor %}
               </select>
             </div>
             <div class="col-md-6">
               <label for="municipio_id" class="form-label">
                 Municipio
               </label>
-              <select
-                class="form-select"
-                name="municipio_id"
-                aria-label="Default select example">
-                <option selected>Seleccione</option>
-                <option value="1">Ejemplo 1</option>
-                <option value="2">Ejemplo 2</option>
+              <select class="form-select" name="departamento_id" id="departamento_id">
+                  <option selected>Seleccione</option>
+                  {% for municipio in municipios %}
+                      <option value="{{ municipio.id }}">{{ municipio.nombre }}</option>
+                  {% endfor %}
               </select>
             </div>
           </div>

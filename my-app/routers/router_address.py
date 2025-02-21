@@ -28,6 +28,9 @@ def viewFormDireccion():
                 cursor.execute("SELECT id, nombre FROM departamento")
                 departamentos = cursor.fetchall()
 
+                cursor.execute("SELECT id, nombre FROM municipio")
+                municipios = cursor.fetchall()
+
                 # Obtener usuarios
                 cursor.execute("SELECT id, nombre FROM users")
                 users = cursor.fetchall()
@@ -36,6 +39,7 @@ def viewFormDireccion():
         return render_template(
             f'{PATH_URL}/registro_direccion.html',
             departamentos=departamentos,
+            municipios=municipios,
             users=users
         )
     else:
